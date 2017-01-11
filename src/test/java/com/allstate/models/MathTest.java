@@ -4,7 +4,6 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.stream.Stream;
 
 import static org.junit.Assert.*;
 
@@ -29,5 +28,11 @@ public class MathTest {
     public void shouldReturnFactorialOfGivensInteger() throws Exception {
         int result = Math.factorial(5);
         assertEquals(120,result);
+    }
+
+    @Test
+    public void shouldReturnFibonacciSeries() throws Exception {
+        int result = Math.fibonacci(15);
+        assertEquals(610,result);
     }
 }

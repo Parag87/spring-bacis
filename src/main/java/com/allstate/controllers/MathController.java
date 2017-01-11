@@ -34,4 +34,13 @@ public class MathController {
 
         return  map;
     }
+
+    @RequestMapping(value = "/math/fibonacci/{x}")
+    public Map<String,Integer> fibonacci(@PathVariable int x){
+        int result = Math.fibonacci(x);
+        Map<String,Integer> map = new HashMap<>();
+        map.put("fibonacci",result);
+
+        return  map;
+    }
 }
