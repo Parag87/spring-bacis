@@ -9,14 +9,15 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 
+
 import static org.junit.Assert.*;
 import static org.hamcrest.Matchers.*;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
 
 @RunWith(SpringRunner.class)
-@WebMvcTest(HomeController.class)
-public class HomeControllerTest {
+@WebMvcTest(MathController.class)
+public class MathControllerTest {
     @Autowired
     private MockMvc mvc;
 
@@ -31,13 +32,9 @@ public class HomeControllerTest {
     }
 
     @Test
-    public void shouldReturnHelloMessageFromHomeMethod() throws  Exception{
-
-        this.mvc.perform(get("/"))
+    public void shouldSquareAnInteger() throws Exception {
+        this.mvc.perform(get("/math/square/4"))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.message", is("Hello Spring")))
-                .andExpect(jsonPath("$.id", is(4)));
-
+                .andExpect(jsonPath("$.square", is(16)));
     }
-
 }

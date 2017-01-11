@@ -6,10 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-/**
- * Created by localadmin on 11/01/17.
- */
-public class HelloTest {
+public class MathTest {
     @Before
     public void setUp() throws Exception {
 
@@ -21,10 +18,8 @@ public class HelloTest {
     }
 
     @Test
-    public void shouldCreateANewInstanceOfHello() throws Exception{
-        Hello h = new Hello("Hello JUnit",4);
-        assertEquals("Hello JUnit",h.getMessage());
-        assertEquals(4,h.getId());
+    public void shouldSquearAnInteger() throws Exception {
+        int result = Math.square(4);
+        assertEquals(16,result);
     }
-
 }
