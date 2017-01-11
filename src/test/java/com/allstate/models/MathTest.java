@@ -4,6 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.stream.Stream;
+
 import static org.junit.Assert.*;
 
 public class MathTest {
@@ -21,5 +23,11 @@ public class MathTest {
     public void shouldSquearAnInteger() throws Exception {
         int result = Math.square(4);
         assertEquals(16,result);
+    }
+
+    @Test
+    public void shouldReturnFactorialOfGivensInteger() throws Exception {
+        int result = Math.factorial(5);
+        assertEquals(120,result);
     }
 }
